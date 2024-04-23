@@ -1,5 +1,5 @@
 const one = () => {
-  const one = "one";
+  const one = "one1";
 
   console.log(one);
 };
