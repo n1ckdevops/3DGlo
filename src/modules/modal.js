@@ -10,7 +10,6 @@ const modal = () => {
       opacity += 0.1;
       modal.style.opacity = opacity;
       setTimeout(animateModal, 30);
-      console.log(modal.style.opacity);
     }
   };
 
@@ -21,7 +20,6 @@ const modal = () => {
         animateModal();
       }
     });
-    console.log(width);
   });
 
   closeBtn.addEventListener("click", () => {
