@@ -14,5 +14,4 @@ const menu = () => {
     menuItem.addEventListener("click", handleMenu)
   );
 };
-
 export default menu;
