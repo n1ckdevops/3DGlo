@@ -1,28 +1,28 @@
-const removeDots = () => {
-  const dotContainer = document.querySelector(".portfolio-dots");
-  const dots = document.querySelectorAll(".dot");
-  dots.forEach((dot) => dotContainer.removeChild(dot));
-};
-
-const addDots = () => {
-  const dotContainer = document.querySelector(".portfolio-dots");
-  const slides = document.querySelectorAll(".portfolio-item");
-
-  slides.forEach((slide, index) => {
-    const dot = document.createElement("li");
-    dot.classList.add("dot");
-    if (index === 0) {
-      dot.classList.add("dot-active");
-    }
-    dotContainer.appendChild(dot);
-  });
-};
-
 const slider = () => {
   const sliderBlock = document.querySelector(".portfolio-content");
   const slides = document.querySelectorAll(".portfolio-item");
   let currentSlide = 0;
   let interval;
+  let dots = document.querySelectorAll(".dot");
+
+  const removeDots = () => {
+    const dotContainer = document.querySelector(".portfolio-dots");
+    dots.forEach((dot) => dotContainer.removeChild(dot));
+  };
+
+  const addDots = () => {
+    const dotContainer = document.querySelector(".portfolio-dots");
+    const slides = document.querySelectorAll(".portfolio-item");
+
+    slides.forEach((slide, index) => {
+      const dot = document.createElement("li");
+      dot.classList.add("dot");
+      if (index === 0) {
+        dot.classList.add("dot-active");
+      }
+      dotContainer.appendChild(dot);
+    });
+  };
 
   const prevSlide = (elems, index, strClasses) => {
     elems[index].classList.remove(strClasses);
@@ -101,7 +101,7 @@ const slider = () => {
 
   removeDots();
   addDots();
-  const dots = document.querySelectorAll(".dot");
+  dots = document.querySelectorAll(".dot");
   startSlide(2000);
 };
 
