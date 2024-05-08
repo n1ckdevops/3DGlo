@@ -29,7 +29,7 @@ const calc = (price = 100) => {
     } else {
       totalValue = 0;
     }
-    total.textContent = totalValue;
+    total.textContent = Math.ceil(totalValue);
   };
 
   calcBlock.addEventListener("input", (e) => {
