@@ -6,20 +6,20 @@ const modal = () => {
   const width = document.documentElement.clientWidth;
   // let opacity = 0;
 
-  // const animateModal = () => {
-  // modal.style.opacity = opacity;
-  setTimeout(() => {
-    animate({
-      duration: 1000,
-      timing(timeFraction) {
-        return timeFraction;
-      },
-      draw(progress) {
-        modal.style.opacity = progress;
-      },
+  const animateModal = () => {
+    // modal.style.opacity = opacity;
+    setTimeout(() => {
+      animate({
+        duration: 1000,
+        timing(timeFraction) {
+          return timeFraction;
+        },
+        draw(progress) {
+          modal.style.opacity = progress;
+        },
+      });
     });
-  }, 1500);
-  // };
+  };
 
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
