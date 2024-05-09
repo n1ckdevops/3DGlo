@@ -4,20 +4,16 @@ const modal = () => {
   const modal = document.querySelector(".popup");
   const buttons = document.querySelectorAll(".popup-btn");
   const width = document.documentElement.clientWidth;
-  // let opacity = 0;
 
   const animateModal = () => {
-    // modal.style.opacity = opacity;
-    setTimeout(() => {
-      animate({
-        duration: 1000,
-        timing(timeFraction) {
-          return timeFraction;
-        },
-        draw(progress) {
-          modal.style.opacity = progress;
-        },
-      });
+    animate({
+      duration: 1000,
+      timing(timeFraction) {
+        return timeFraction;
+      },
+      draw(progress) {
+        modal.style.opacity = progress;
+      },
     });
   };
 
