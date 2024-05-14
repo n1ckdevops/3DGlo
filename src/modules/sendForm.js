@@ -29,7 +29,9 @@ const sendForm = ({ formId, someElements = [] }) => {
     const formElements = form.querySelectorAll("input");
     const formData = new FormData(form);
     const formBody = {};
+    statusBlock.style.color = "white";
     statusBlock.textContent = loadText;
+
     form.append(statusBlock);
     //
     formData.forEach((value, key) => {
@@ -38,16 +40,13 @@ const sendForm = ({ formId, someElements = [] }) => {
 
     someElements.forEach((elem) => {
       const element = document.getElementById(elem.id);
-      console.log(element);
+
       if (elem.type === "block") {
-        //
         formBody[elem.id] = element.textContent;
       } else if (elem.type === "input") {
         formBody[elem.id] = element.value;
       }
     });
-
-    console.log("submit");
 
     if (validate(formElements)) {
       sendData(formBody)
@@ -56,6 +55,9 @@ const sendForm = ({ formId, someElements = [] }) => {
           formElements.forEach((input) => {
             input.value = "";
           });
+          setTimeout(() => {
+            statusBlock.style.display = "none";
+          }, 3000);
         })
         .catch((error) => {
           statusBlock.textContent = errorText;

@@ -31,6 +31,9 @@ const modal = () => {
       !e.target.closest(".popup-content") ||
       e.target.classList.contains("popup-close")
     ) {
+      // setTimeout(() => {
+      //   modal.style.display = "none";
+      // }, 3000);
       modal.style.display = "none";
     }
   });

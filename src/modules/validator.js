@@ -10,6 +10,7 @@ const validator = () => {
   const allowNumber = (e) => {
     e.target.value = e.target.value.replace(/\D+/g, "");
   };
+
   squareNumber.addEventListener("input", allowNumber);
   roomCount.addEventListener("input", allowNumber);
   countDays.addEventListener("input", allowNumber);
@@ -17,6 +18,7 @@ const validator = () => {
   users.forEach((el) => {
     el.addEventListener("input", (e) => {
       e.target.value = e.target.value.replace(/[^а-яА-ЯёЁ\-\s]+/, "");
+      validateMinLength(e.target, 3); // Добавляем валидацию минимальной длины
     });
   });
 
@@ -32,13 +34,25 @@ const validator = () => {
   phones.forEach((el) => {
     el.addEventListener("input", (e) => {
       e.target.value = e.target.value.replace(/[^0-9()\-\+]+/, "");
+      validateMinLength(e.target, 11);
     });
   });
 
   messages.forEach((el) => {
     el.addEventListener("input", (e) => {
       e.target.value = e.target.value.replace(/[^а-яА-ЯёЁ0-9\-\s\.\,\!]+/, "");
+      validateMinLength(e.target, 15);
     });
   });
+
+  const validateMinLength = (input, minLength) => {
+    const value = input.value.trim();
+    if (value.length < minLength) {
+      input.setCustomValidity(`Минимальная длина ${minLength} символа(ов)`);
+    } else {
+      input.setCustomValidity("");
+    }
+  };
 };
+
 export default validator;
