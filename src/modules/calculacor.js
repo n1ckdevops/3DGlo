@@ -33,7 +33,6 @@ const calc = (price = 100) => {
   };
 
   calcBlock.addEventListener("input", (e) => {
-    //
     if (
       e.target === calcType ||
       e.target === calcSquare ||
