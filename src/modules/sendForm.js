@@ -1,3 +1,4 @@
+import modal from "./modal";
 const sendForm = ({ formId, someElements = [] }) => {
   const form = document.getElementById(formId);
   const statusBlock = document.createElement("div");
@@ -56,7 +57,7 @@ const sendForm = ({ formId, someElements = [] }) => {
             input.value = "";
           });
           setTimeout(() => {
-            statusBlock.remove;
+            statusBlock.remove();
           }, 3000);
         })
         .catch((error) => {
