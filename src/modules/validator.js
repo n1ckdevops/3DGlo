@@ -7,6 +7,15 @@ const validator = () => {
   const phones = document.querySelectorAll('[name="user_phone"]');
   const messages = document.querySelectorAll('[name="user_message"]');
 
+  const validateMinLength = (input, minLength) => {
+    const value = input.value.trim();
+    if (value.length < minLength) {
+      input.setCustomValidity(`Минимальная длина ${minLength} символа(ов)`);
+    } else {
+      input.setCustomValidity("");
+    }
+  };
+  
   const allowNumber = (e) => {
     e.target.value = e.target.value.replace(/\D+/g, "");
   };
@@ -44,15 +53,6 @@ const validator = () => {
       validateMinLength(e.target, 15);
     });
   });
-
-  const validateMinLength = (input, minLength) => {
-    const value = input.value.trim();
-    if (value.length < minLength) {
-      input.setCustomValidity(`Минимальная длина ${minLength} символа(ов)`);
-    } else {
-      input.setCustomValidity("");
-    }
-  };
 };
 
 export default validator;
