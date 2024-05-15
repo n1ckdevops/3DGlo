@@ -56,7 +56,7 @@ const sendForm = ({ formId, someElements = [] }) => {
             input.value = "";
           });
           setTimeout(() => {
-            statusBlock.style.display = "none";
+            statusBlock.remove;
           }, 3000);
         })
         .catch((error) => {
