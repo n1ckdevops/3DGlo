@@ -1,4 +1,3 @@
-import modal from "./modal";
 const sendForm = ({ formId, someElements = [] }) => {
   const form = document.getElementById(formId);
   const statusBlock = document.createElement("div");
@@ -27,7 +26,7 @@ const sendForm = ({ formId, someElements = [] }) => {
   };
 
   const submitForm = () => {
-    const formElements = form.querySelectorAll("input");
+    const formElements = form.querySelectorAll(".form-control");
     const formData = new FormData(form);
     const formBody = {};
     statusBlock.style.color = "white";
