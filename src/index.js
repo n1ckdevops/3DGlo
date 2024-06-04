@@ -7,7 +7,7 @@ import slider from "./modules/slider";
 import calc from "./modules/calculacor";
 import sendForm from "./modules/sendForm";
 
-timer("30 may 2024");
+timer("30 june 2024");
 menu();
 modal();
 validator();
